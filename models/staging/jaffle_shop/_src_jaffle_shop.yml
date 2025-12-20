@@ -4,7 +4,5 @@ sources:
     schema: jaffle_shop
     tables:
       - name: customers
-      - name: customers_test
       - name: orders
-      - name: products
         
