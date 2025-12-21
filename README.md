@@ -15,6 +15,7 @@ Try running the following commands:
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
 
 ### Project's structure
+```text
 jaffle_shop
 ├── README.md
 ├── analyses
@@ -56,3 +57,4 @@ jaffle_shop
 ├── snapshots
 └── tests
     └── assert_positive_value_for_total_amount.sql
+```
