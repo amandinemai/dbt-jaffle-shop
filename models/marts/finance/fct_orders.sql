@@ -1,3 +1,9 @@
+{{ config (
+    materialized = 'incremental',
+    incremental_strategy = 'append',
+    unique_key = 'order_id'
+) }}
+
 with orders as  (
     select * from {{ ref ('stg_jaffle_shop__orders' )}}
 ),
@@ -28,3 +34,6 @@ order_payments as (
 )
 
 select * from final
+{% if is_incremental() %}
+    where order_date >= (select max(order_date) from {{ this }})
+{% endif %}
